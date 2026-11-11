@@ -57,6 +57,10 @@ main { max-width: 64rem; width: 100%; min-width: 0; padding: 2rem 16px 4rem 2rem
 @media (max-width: 900px) { body { grid-template-columns: 1fr; } #nav { border-right: 0; border-bottom: 1px solid var(--line); } }
 h1 { font-weight: 700; font-size: calc(1.4rem + 4pt); margin: 0 0 1.5rem; }
 .wrap { overflow-x: auto; }
+.intro { font-family: var(--latin); font-size: 0.8em; line-height: 1.6; max-width: 46rem; margin: 0 0 2rem; }
+.intro p { margin: 0 0 0.8rem; }
+.intro ul { margin: 0 0 0.8rem; padding-left: 1.4rem; }
+.intro li { margin: 0.2rem 0; }
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: 0.35rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 thead th { font-size: 0.85em; color: var(--muted); font-weight: 400; border-bottom: 2px solid var(--line); }
@@ -74,96 +78,119 @@ a:hover { text-decoration: underline; }
 </aside>
 <main>
 <h1>प्रस्थानत्रयभाष्यम्</h1>
+<div class="intro"><p>This is a resource for those that are studying the prasthāna traya bhāṣya.</p>
+<ul>
+<li>The bhāṣya and ṭīkā are from advaita sharada
+<ul>
+<li>Click on the bhāṣya paragraph marker to show the translation.
+</li>
+<li>Click on the ṭīkā marker (superscript in a box) to show the ṭīkā and translation.
+</li></ul></li>
+<li>Each bhāṣya sentence is analyzed as a mantra
+<ul>
+<li>Click on the bhāṣya sentence marker to show the sentence, translation and vr̥tti.
+</li></ul></li>
+<li>Where appropriate, additional notes are added
+<ul>
+<li>Click on the ṭippaṇī marker (superscript) to show additional notes.
+</li></ul></li>
+<li>The govinda prasādinī and maṇiprabhā are from adhyayana-sahakari
+<ul>
+<li>Click on the mantra marker to show the maṇiprabhā and translation
+</li>
+<li>Click on the prasādinī marker (superscript in a circle) to show the govinda-prasādinī and translation
+</li></ul></li></ul>
+<p>The anuvāda (translation), ṭippaṇī (notes) and bhāṣya vr̥tti are all AI generated.</p></div>
 <div class="wrap">
 <table>
-<thead><tr><th>उपनिषत्</th><th>भाष्यम्</th><th>टीका</th><th>अनुवादः</th><th>टिप्पणी</th><th>वृत्तिः</th></tr></thead>
+<thead><tr><th>उपनिषत्</th><th>भाष्यम्</th><th>टीका</th><th>अनुवादः</th><th>मणिप्रभा</th><th>मिताक्षरा</th><th>गोविन्दप्रसादिनी</th><th>टिप्पणी</th><th>वृत्तिः</th></tr></thead>
 <tbody>
-<tr class="work"><th colspan="6" scope="rowgroup">ईशावास्योपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="isha.html">ईशावास्योपनिषद्भाष्यम्</a></td><td><a href="isha.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">केनोपनिषत्पदभाष्यम्</th></tr>
-<tr><td class="ch"><a href="kena_01.html">प्रथमः खण्डः</a></td><td><a href="kena_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
-<tr><td class="ch"><a href="kena_02.html">द्वितीयः खण्डः</a></td><td><a href="kena_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
-<tr><td class="ch"><a href="kena_03.html">तृतीयः खण्डः</a></td><td><a href="kena_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
-<tr><td class="ch"><a href="kena_04.html">चतुर्थः खण्डः</a></td><td><a href="kena_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">कठोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="katha_01.html">प्रथमोऽध्यायः</a></td><td><a href="katha_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="katha_02.html">द्वितीयोऽध्यायः</a></td><td><a href="katha_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">प्रश्नोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="prashna_01.html">प्रथमः प्रश्नः</a></td><td><a href="prashna_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="prashna_02.html">द्वितीयः प्रश्नः</a></td><td><a href="prashna_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="prashna_03.html">तृतीयः प्रश्नः</a></td><td><a href="prashna_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="prashna_04.html">चतुर्थः प्रश्नः</a></td><td><a href="prashna_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="prashna_05.html">पञ्चमः प्रश्नः</a></td><td><a href="prashna_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="prashna_06.html">षष्ठः प्रश्नः</a></td><td><a href="prashna_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">मुण्डकोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="mundaka_01.html">प्रथमं मुण्डकम्</a></td><td><a href="mundaka_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="mundaka_02.html">द्वितीयं मुण्डकम्</a></td><td><a href="mundaka_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="mundaka_03.html">तृतीयं मुण्डकम्</a></td><td><a href="mundaka_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">माण्डूक्योपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="mandukya_01.html">आगमप्रकरणम्</a></td><td><a href="mandukya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="mandukya_02.html">वैतथ्यप्रकरणम्</a></td><td><a href="mandukya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="mandukya_03.html">अद्वैतप्रकरणम्</a></td><td><a href="mandukya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="mandukya_04.html">अलातशान्तिप्रकरणम्</a></td><td><a href="mandukya_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">तैत्तिरीयोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="taittiriya_01.html">शीक्षावल्ली</a></td><td><a href="taittiriya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="taittiriya_02.html">ब्रह्मानन्दवल्ली</a></td><td><a href="taittiriya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="taittiriya_03.html">भृगुवल्ली</a></td><td><a href="taittiriya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">ऐतरेयोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="aitareya_01.html">प्रथमः अध्यायः</a></td><td><a href="aitareya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="aitareya_02.html">द्वितीयः अध्यायः</a></td><td><a href="aitareya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="aitareya_03.html">तृतीयः अध्यायः</a></td><td><a href="aitareya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">छान्दोग्योपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="chandogya_01.html">प्रथमोऽध्यायः</a></td><td><a href="chandogya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_02.html">द्वितीयोऽध्यायः</a></td><td><a href="chandogya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_03.html">तृतीयोऽध्यायः</a></td><td><a href="chandogya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_04.html">चतुर्थोऽध्यायः</a></td><td><a href="chandogya_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_05.html">पञ्चमोऽध्यायः</a></td><td><a href="chandogya_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_06.html">षष्ठोऽध्यायः</a></td><td><a href="chandogya_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_07.html">सप्तमोऽध्यायः</a></td><td><a href="chandogya_07.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="chandogya_08.html">अष्टमोऽध्यायः</a></td><td><a href="chandogya_08.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">बृहदारण्यकोपनिषद्भाष्यम्</th></tr>
-<tr><td class="ch"><a href="brihadaranyaka_01.html">प्रथमोऽध्यायः</a></td><td><a href="brihadaranyaka_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brihadaranyaka_02.html">द्वितीयोऽध्यायः</a></td><td><a href="brihadaranyaka_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brihadaranyaka_03.html">तृतीयोऽध्यायः</a></td><td><a href="brihadaranyaka_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brihadaranyaka_04.html">चतुर्थोऽध्यायः</a></td><td><a href="brihadaranyaka_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brihadaranyaka_05.html">पञ्चमोऽध्यायः</a></td><td><a href="brihadaranyaka_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brihadaranyaka_06.html">षष्ठोऽध्यायः</a></td><td><a href="brihadaranyaka_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">श्रीमद्भगवद्गीताभाष्यम्</th></tr>
-<tr><td class="ch"><a href="gita_01.html">प्रथमोऽध्यायः</a></td><td><a href="gita_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_02.html">द्वितीयोऽध्यायः</a></td><td><a href="gita_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_03.html">तृतीयोऽध्यायः</a></td><td><a href="gita_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_04.html">चतुर्थोऽध्यायः</a></td><td><a href="gita_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_05.html">पञ्चमोऽध्यायः</a></td><td><a href="gita_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_06.html">षष्ठोऽध्यायः</a></td><td><a href="gita_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_07.html">सप्तमोऽध्यायः</a></td><td><a href="gita_07.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_08.html">अष्टमोऽध्यायः</a></td><td><a href="gita_08.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_09.html">नवमोऽध्यायः</a></td><td><a href="gita_09.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_10.html">दशमोऽध्यायः</a></td><td><a href="gita_10.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_11.html">एकादशोऽध्यायः</a></td><td><a href="gita_11.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_12.html">द्वादशोऽध्यायः</a></td><td><a href="gita_12.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_13.html">त्रयोदशोऽध्यायः</a></td><td><a href="gita_13.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_14.html">चतुर्दशोऽध्यायः</a></td><td><a href="gita_14.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_15.html">पञ्चदशोऽध्यायः</a></td><td><a href="gita_15.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_16.html">षोडशोऽध्यायः</a></td><td><a href="gita_16.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_17.html">सप्तदशोऽध्यायः</a></td><td><a href="gita_17.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="gita_18.html">अष्टादशोऽध्यायः</a></td><td><a href="gita_18.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td></tr>
-<tr class="work"><th colspan="6" scope="rowgroup">ब्रह्मसूत्रभाष्यम्</th></tr>
-<tr><td class="ch"><a href="brahmasutra_01.html">प्रथमोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_01.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_02.html">प्रथमोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_02.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_03.html">प्रथमोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_03.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_04.html">प्रथमोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_04.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_05.html">द्वितीयोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_05.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_06.html">द्वितीयोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_06.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_07.html">द्वितीयोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_07.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_08.html">द्वितीयोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_08.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_09.html">तृतीयोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_09.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_10.html">तृतीयोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_10.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_11.html">तृतीयोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_11.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_12.html">तृतीयोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_12.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_13.html">चतुर्थोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_13.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_14.html">चतुर्थोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_14.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_15.html">चतुर्थोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_15.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
-<tr><td class="ch"><a href="brahmasutra_16.html">चतुर्थोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_16.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">ईशावास्योपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="isha.html">ईशावास्योपनिषद्भाष्यम्</a></td><td><a href="isha.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td>गोविन्दप्रसादिनी</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">केनोपनिषत्पदभाष्यम्</th></tr>
+<tr><td class="ch"><a href="kena_01.html">प्रथमः खण्डः</a></td><td><a href="kena_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
+<tr><td class="ch"><a href="kena_02.html">द्वितीयः खण्डः</a></td><td><a href="kena_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
+<tr><td class="ch"><a href="kena_03.html">तृतीयः खण्डः</a></td><td><a href="kena_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
+<tr><td class="ch"><a href="kena_04.html">चतुर्थः खण्डः</a></td><td><a href="kena_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td>टिप्पणी</td><td>वृत्तिः</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">कठोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="katha_01.html">प्रथमोऽध्यायः</a></td><td><a href="katha_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="katha_02.html">द्वितीयोऽध्यायः</a></td><td><a href="katha_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">प्रश्नोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="prashna_01.html">प्रथमः प्रश्नः</a></td><td><a href="prashna_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="prashna_02.html">द्वितीयः प्रश्नः</a></td><td><a href="prashna_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="prashna_03.html">तृतीयः प्रश्नः</a></td><td><a href="prashna_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="prashna_04.html">चतुर्थः प्रश्नः</a></td><td><a href="prashna_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="prashna_05.html">पञ्चमः प्रश्नः</a></td><td><a href="prashna_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="prashna_06.html">षष्ठः प्रश्नः</a></td><td><a href="prashna_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">मुण्डकोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="mundaka_01.html">प्रथमं मुण्डकम्</a></td><td><a href="mundaka_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="mundaka_02.html">द्वितीयं मुण्डकम्</a></td><td><a href="mundaka_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="mundaka_03.html">तृतीयं मुण्डकम्</a></td><td><a href="mundaka_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">माण्डूक्योपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="mandukya_01.html">आगमप्रकरणम्</a></td><td><a href="mandukya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="mandukya_02.html">वैतथ्यप्रकरणम्</a></td><td><a href="mandukya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="mandukya_03.html">अद्वैतप्रकरणम्</a></td><td><a href="mandukya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="mandukya_04.html">अलातशान्तिप्रकरणम्</a></td><td><a href="mandukya_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">तैत्तिरीयोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="taittiriya_01.html">शीक्षावल्ली</a></td><td><a href="taittiriya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="taittiriya_02.html">ब्रह्मानन्दवल्ली</a></td><td><a href="taittiriya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="taittiriya_03.html">भृगुवल्ली</a></td><td><a href="taittiriya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">ऐतरेयोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="aitareya_01.html">प्रथमः अध्यायः</a></td><td><a href="aitareya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="aitareya_02.html">द्वितीयः अध्यायः</a></td><td><a href="aitareya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="aitareya_03.html">तृतीयः अध्यायः</a></td><td><a href="aitareya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td>मणिप्रभा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">छान्दोग्योपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="chandogya_01.html">प्रथमोऽध्यायः</a></td><td><a href="chandogya_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_02.html">द्वितीयोऽध्यायः</a></td><td><a href="chandogya_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_03.html">तृतीयोऽध्यायः</a></td><td><a href="chandogya_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_04.html">चतुर्थोऽध्यायः</a></td><td><a href="chandogya_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_05.html">पञ्चमोऽध्यायः</a></td><td><a href="chandogya_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_06.html">षष्ठोऽध्यायः</a></td><td><a href="chandogya_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_07.html">सप्तमोऽध्यायः</a></td><td><a href="chandogya_07.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="chandogya_08.html">अष्टमोऽध्यायः</a></td><td><a href="chandogya_08.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">बृहदारण्यकोपनिषद्भाष्यम्</th></tr>
+<tr><td class="ch"><a href="brihadaranyaka_01.html">प्रथमोऽध्यायः</a></td><td><a href="brihadaranyaka_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brihadaranyaka_02.html">द्वितीयोऽध्यायः</a></td><td><a href="brihadaranyaka_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brihadaranyaka_03.html">तृतीयोऽध्यायः</a></td><td><a href="brihadaranyaka_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brihadaranyaka_04.html">चतुर्थोऽध्यायः</a></td><td><a href="brihadaranyaka_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brihadaranyaka_05.html">पञ्चमोऽध्यायः</a></td><td><a href="brihadaranyaka_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brihadaranyaka_06.html">षष्ठोऽध्यायः</a></td><td><a href="brihadaranyaka_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td>मिताक्षरा</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">श्रीमद्भगवद्गीताभाष्यम्</th></tr>
+<tr><td class="ch"><a href="gita_01.html">प्रथमोऽध्यायः</a></td><td><a href="gita_01.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_02.html">द्वितीयोऽध्यायः</a></td><td><a href="gita_02.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_03.html">तृतीयोऽध्यायः</a></td><td><a href="gita_03.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_04.html">चतुर्थोऽध्यायः</a></td><td><a href="gita_04.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_05.html">पञ्चमोऽध्यायः</a></td><td><a href="gita_05.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_06.html">षष्ठोऽध्यायः</a></td><td><a href="gita_06.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_07.html">सप्तमोऽध्यायः</a></td><td><a href="gita_07.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_08.html">अष्टमोऽध्यायः</a></td><td><a href="gita_08.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_09.html">नवमोऽध्यायः</a></td><td><a href="gita_09.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_10.html">दशमोऽध्यायः</a></td><td><a href="gita_10.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_11.html">एकादशोऽध्यायः</a></td><td><a href="gita_11.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_12.html">द्वादशोऽध्यायः</a></td><td><a href="gita_12.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_13.html">त्रयोदशोऽध्यायः</a></td><td><a href="gita_13.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_14.html">चतुर्दशोऽध्यायः</a></td><td><a href="gita_14.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_15.html">पञ्चदशोऽध्यायः</a></td><td><a href="gita_15.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_16.html">षोडशोऽध्यायः</a></td><td><a href="gita_16.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_17.html">सप्तदशोऽध्यायः</a></td><td><a href="gita_17.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="gita_18.html">अष्टादशोऽध्यायः</a></td><td><a href="gita_18.html">भाष्यम्</a></td><td>टीका</td><td>अनुवादः</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr class="work"><th colspan="9" scope="rowgroup">ब्रह्मसूत्रभाष्यम्</th></tr>
+<tr><td class="ch"><a href="brahmasutra_01.html">प्रथमोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_01.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_02.html">प्रथमोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_02.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_03.html">प्रथमोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_03.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_04.html">प्रथमोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_04.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_05.html">द्वितीयोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_05.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_06.html">द्वितीयोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_06.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_07.html">द्वितीयोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_07.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_08.html">द्वितीयोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_08.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_09.html">तृतीयोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_09.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_10.html">तृतीयोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_10.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_11.html">तृतीयोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_11.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_12.html">तृतीयोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_12.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_13.html">चतुर्थोऽध्यायः — प्रथमः पादः</a></td><td><a href="brahmasutra_13.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_14.html">चतुर्थोऽध्यायः — द्वितीयः पादः</a></td><td><a href="brahmasutra_14.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_15.html">चतुर्थोऽध्यायः — तृतीयः पादः</a></td><td><a href="brahmasutra_15.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
+<tr><td class="ch"><a href="brahmasutra_16.html">चतुर्थोऽध्यायः — चतुर्थः पादः</a></td><td><a href="brahmasutra_16.html">भाष्यम्</a></td><td>टीका</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td><td class="no">--</td></tr>
 </tbody>
 </table>
 </div>

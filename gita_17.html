@@ -88,11 +88,16 @@ h2.vibhaga { text-align: center; font-weight: 600; font-size: calc(1.5rem + 6pt 
 .mtext { font-size: calc(1.3rem + 6pt + var(--bump)); line-height: 1.9; font-weight: 600; }
 p.bh { font-size: calc(1.15rem + 6pt + var(--bump)); line-height: 2.1; margin: 0 0 1.1rem; position: relative; scroll-margin-top: 3rem; }
 p.colophon { text-align: center; font-size: calc(1.1rem + 6pt + var(--bump)); margin: 2rem 0; }
-.pn { position: absolute; left: -3.2rem; width: 2.6rem; text-align: right; top: 0.15rem;
-  font-size: calc(0.85rem + 6pt + var(--bump)); color: var(--muted); text-decoration: none; }
+/* the paragraph number: in a double box, in the margin (the sentence
+   numbers have a single one) */
+.pn { position: absolute; right: calc(100% + 0.5rem); top: 0.35rem; white-space: nowrap;
+  font-size: calc(0.65rem + 6pt + var(--bump)); line-height: 1.25; color: var(--muted); text-decoration: none;
+  border: 3px double currentColor; border-radius: 3px; padding: 0 0.25em; }
 a.pn { color: var(--link); }
-.tk { font-size: 0.68em; vertical-align: super; line-height: 0; color: var(--link);
-  text-decoration: none; padding: 0 0.1em; font-weight: normal; }
+/* Anandagiri's tika: a small raised box, in blue */
+.tk { font-size: 0.62em; vertical-align: 0.75em; line-height: 1; color: var(--link);
+  text-decoration: none; padding: 0 0.15em; margin: 0 0.1em; font-weight: normal;
+  border: 1px solid currentColor; border-radius: 3px; }
 .sn { font-size: 0.75em; color: #a07a1c; text-decoration: none; border: 1px solid currentColor;
   border-radius: 3px; padding: 0.05em 0.25em; margin: 0 0.3em 0 0.1em; vertical-align: 0.1em; line-height: 1; font-weight: normal; }
 .mp { background: var(--hl); font-weight: 900; padding: 0 0.1em; border-radius: 2px; }
