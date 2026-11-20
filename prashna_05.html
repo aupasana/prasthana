@@ -99,6 +99,14 @@ main { grid-column: 2; grid-row: 1; overflow-y: auto; padding: 0 2rem 4rem 4.5re
 #toggles button:disabled { opacity: 0.25; cursor: default; }
 body.hide-pn main .pn, body.hide-sn main .sn, body.hide-tk main .tk, body.hide-gp main .gp,
 body.hide-mn main .mn, body.hide-gl main .gl { display: none; }
+/* the show button (an eye): off, the text shows only the paragraph numbers, and
+   the mark the side pane went to, until it moves on; the toggles stay as they are */
+#toggles #showbtn { color: var(--text); border: 1px solid var(--line); display: inline-flex; align-items: center; }
+#showbtn .shut { display: none; }
+#showbtn.off .open { display: none; }
+#showbtn.off .shut { display: inline; }
+#toggles #showbtn.off { text-decoration: none; }
+body.bare main :is(.sn, .tk, .gp, .mn, .gl):not(.active) { display: none; }
 button { font: inherit; font-size: calc(0.85rem + 4pt); color: var(--text); background: var(--panel);
   border: 1px solid var(--line); border-radius: 4px; padding: 0.25rem 0.6rem; cursor: pointer; }
 h3.sub { text-align: center; font-weight: 600; font-size: calc(1.25rem + 6pt + var(--bump)); margin: 3rem 0 0; }
@@ -255,8 +263,32 @@ document.getElementById("navbtn").onclick = () => body.classList.toggle("nav-clo
     b.onclick = () => set(!body.classList.contains("hide-" + k));
     set(hidden.includes(k));
     box.appendChild(b);
+    if (k === "pn") box.appendChild(showButton());
   }
 })();
+// the show button, after अनुवादः: off, only the paragraph numbers are shown in
+// the text (shown is not enabled: the side pane's arrows still go to the rest);
+// kept like the toggles
+function showButton() {
+  const b = document.createElement("button");
+  b.type = "button"; b.id = "showbtn";
+  b.title = "show the marks in the text (off: the paragraph numbers only)";
+  b.setAttribute("aria-label", b.title);
+  const eye = '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>';
+  b.innerHTML = `<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">` +
+    `<g class="open">${eye}<circle cx="12" cy="12" r="3"/></g><g class="shut">${eye}<path d="M3 3l18 18"/></g></svg>`;
+  const set = off => {
+    body.classList.toggle("bare", off);
+    b.classList.toggle("off", off);
+    b.setAttribute("aria-pressed", String(!off));
+    try { localStorage.setItem("bare", off ? "1" : ""); } catch (e) {}
+  };
+  b.onclick = () => set(!body.classList.contains("bare"));
+  let off = false;
+  try { off = localStorage.getItem("bare") === "1"; } catch (e) {}
+  set(off);
+  return b;
+}
 document.getElementById("sidebtn").onclick = () => body.classList.toggle("side-closed");
 document.getElementById("closeside").onclick = () => body.classList.add("side-closed");
 document.querySelectorAll("#nav a[href^='#']").forEach(a => a.addEventListener("click", () => {
@@ -275,8 +307,10 @@ function show(el, html) {
 // « » to the one of its kind, in the text's order, passing over kinds turned off
 const MARKS = "a.pn, a.tk, a.sn, a.gl, a.mn, a.gp";
 const kindOf = a => ["pn", "sn", "tk", "gp", "mn", "gl"].find(k => a.classList.contains(k));
+// (a mark the show button hides still counts: only a kind turned off is passed over)
+const shown = a => a.offsetParent || body.classList.contains("bare") && !body.classList.contains("hide-" + kindOf(a));
 const marks = k => [...document.querySelector("main").querySelectorAll(k ? "a." + k : MARKS)]
-  .filter(a => a.offsetParent && ["p", "t", "gpx", "gp", "n", "g", "v"].some(d => d in a.dataset));
+  .filter(a => shown(a) && ["p", "t", "gpx", "gp", "n", "g", "v"].some(d => d in a.dataset));
 function target(d, same) {
   const cur = document.querySelector("main a.active");
   if (same && !cur) return null;
