@@ -16,7 +16,10 @@
 @font-face { font-family: "Adishila"; src: url("assets/AdishilaHeavyH.ttf") format("truetype"); font-weight: 900; font-style: normal; }
 @font-face { font-family: "Adishila"; src: url("assets/AdishilaHeavyItalicI.ttf") format("truetype"); font-weight: 900; font-style: italic; }
 @font-face { font-family: "Noto Serif"; src: url("assets/NotoSerif-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/NotoSansDevanagari-Regular.ttf") format("truetype"); }
+/* Noto Sans: the variable font, all its weights (the regular if it is missing) */
+@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/NotoSansDevanagari-VariableFont_wdth,wght.ttf") format("truetype"),
+  url("assets/NotoSansDevanagari-Regular.ttf") format("truetype"); font-weight: 100 900; font-stretch: 62.5% 100%; }
+@font-face { font-family: "Sanskrit 2003"; src: url("assets/Sanskrit2003.ttf") format("truetype"); }
 :root {
   --bump: 0pt;   /* the reader's text size step (lipi.js), for the middle and right panels */
   --deva: "Adishila", "Noto Sans Devanagari", serif;
@@ -37,6 +40,9 @@
   --line: #3a3631; --link: #8bb8e0; --hl: #5a5023; --mark: #3d3722;
   --act: #ff8a50; --actbg: #4a2a1c; --cur: #75621f; --curline: #d9b955;
 }
+/* the reader's font (lipi.js); Adishila unless chosen, and Noto Serif for the Latin scripts */
+:root[data-font="sanskrit2003"] { --deva: "Sanskrit 2003", "Noto Sans Devanagari", serif; }
+:root[data-font="noto"] { --deva: "Noto Sans Devanagari", serif; }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
@@ -55,7 +61,8 @@ body.nav-closed #nav, body.side-closed #side { display: none; }
 #size { display: flex; gap: 0.3rem; margin: 0 0 0.5rem; }
 #size button { font-size: 0.9em; background: var(--bg); padding: 0.1rem 0.6rem; }
 #size .step { align-self: center; font-family: var(--latin); font-size: 0.75em; color: var(--muted); }
-#lipi select { font: inherit; font-size: 0.9em; color: var(--text); background: var(--bg); border: 1px solid var(--line);
+#font { margin: 0 0 0.5rem; }
+#lipi select, #font select { font: inherit; font-size: 0.9em; color: var(--text); background: var(--bg); border: 1px solid var(--line);
   border-radius: 4px; padding: 0.15rem 0.3rem; width: 100%; }
 #lipi .lipi-note { font-family: var(--latin); font-size: 0.75em; color: var(--muted); margin-top: 0.3rem; }
 :root.lipi-latin { --deva: "Noto Serif", "Noto Sans Devanagari", serif; }
@@ -197,7 +204,7 @@ body:not(.side-closed) main a.active { background: var(--actbg); outline: 2px so
 </head>
 <body class="side-closed">
 <aside id="nav">
-<a class="home" href="index.html">प्रस्थानत्रयी</a><nav class="works"><a href="isha.html">ई॰</a> <a href="kena_01.html">के॰</a> <a href="katha_01.html">क॰</a> <a href="prashna_01.html">प्र॰</a> <a href="mundaka_01.html">मु॰</a> <a href="mandukya_01.html" class="here">मा॰</a> <a href="taittiriya_01.html">तै॰</a> <a href="aitareya_01.html">ऐ॰</a> <a href="chandogya_01.html">छा॰</a> <a href="brihadaranyaka_01.html">बृ॰</a> <a href="gita_01.html">गी॰</a> <a href="brahmasutra_01.html">सू॰</a></nav><div id="size"></div><div id="lipi"></div>
+<a class="home" href="index.html">प्रस्थानत्रयी</a><nav class="works"><a href="isha.html">ई॰</a> <a href="kena_01.html">के॰</a> <a href="katha_01.html">क॰</a> <a href="prashna_01.html">प्र॰</a> <a href="mundaka_01.html">मु॰</a> <a href="mandukya_01.html" class="here">मा॰</a> <a href="taittiriya_01.html">तै॰</a> <a href="aitareya_01.html">ऐ॰</a> <a href="chandogya_01.html">छा॰</a> <a href="brihadaranyaka_01.html">बृ॰</a> <a href="gita_01.html">गी॰</a> <a href="brahmasutra_01.html">सू॰</a></nav><div id="size"></div><div id="font"></div><div id="lipi"></div>
 <h1>माण्डूक्योपनिषद्भाष्यम्</h1>
 <ol class="chapters"><li><a href="mandukya_01.html">आगमप्रकरणम्</a></li><li><a href="mandukya_02.html">वैतथ्यप्रकरणम्</a></li><li class="here"><a href="mandukya_03.html">अद्वैतप्रकरणम्</a></li><li><a href="mandukya_04.html">अलातशान्तिप्रकरणम्</a></li></ol>
 <ol class="toc"><li class="sub">कारिकाः<div class="ms"><a class="m" href="#MK-C03-K01">१</a> <a class="m" href="#MK-C03-K02">२</a> <a class="m" href="#MK-C03-K03">३</a> <a class="m" href="#MK-C03-K04">४</a> <a class="m" href="#MK-C03-K05">५</a> <a class="m" href="#MK-C03-K06">६</a> <a class="m" href="#MK-C03-K07">७</a> <a class="m" href="#MK-C03-K08">८</a> <a class="m" href="#MK-C03-K09">९</a> <a class="m" href="#MK-C03-K10">१०</a> <a class="m" href="#MK-C03-K11">११</a> <a class="m" href="#MK-C03-K12">१२</a> <a class="m" href="#MK-C03-K13">१३</a> <a class="m" href="#MK-C03-K14">१४</a> <a class="m" href="#MK-C03-K15">१५</a> <a class="m" href="#MK-C03-K16">१६</a> <a class="m" href="#MK-C03-K17">१७</a> <a class="m" href="#MK-C03-K18">१८</a> <a class="m" href="#MK-C03-K19">१९</a> <a class="m" href="#MK-C03-K20">२०</a> <a class="m" href="#MK-C03-K21">२१</a> <a class="m" href="#MK-C03-K22">२२</a> <a class="m" href="#MK-C03-K23">२३</a> <a class="m" href="#MK-C03-K24">२४</a> <a class="m" href="#MK-C03-K25">२५</a> <a class="m" href="#MK-C03-K26">२६</a> <a class="m" href="#MK-C03-K27">२७</a> <a class="m" href="#MK-C03-K28">२८</a> <a class="m" href="#MK-C03-K29">२९</a> <a class="m" href="#MK-C03-K30">३०</a> <a class="m" href="#MK-C03-K31">३१</a> <a class="m" href="#MK-C03-K32">३२</a> <a class="m" href="#MK-C03-K33">३३</a> <a class="m" href="#MK-C03-K34">३४</a> <a class="m" href="#MK-C03-K35">३५</a> <a class="m" href="#MK-C03-K36">३६</a> <a class="m" href="#MK-C03-K37">३७</a> <a class="m" href="#MK-C03-K38">३८</a> <a class="m" href="#MK-C03-K39">३९</a> <a class="m" href="#MK-C03-K40">४०</a> <a class="m" href="#MK-C03-K41">४१</a> <a class="m" href="#MK-C03-K42">४२</a> <a class="m" href="#MK-C03-K43">४३</a> <a class="m" href="#MK-C03-K44">४४</a> <a class="m" href="#MK-C03-K45">४५</a> <a class="m" href="#MK-C03-K46">४६</a> <a class="m" href="#MK-C03-K47">४७</a> <a class="m" href="#MK-C03-K48">४८</a></div></li></ol>
@@ -528,6 +535,25 @@ arrows();
   main.addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; update(); }); } });
   window.addEventListener("load", update);
   update();
+})();
+// the arrow keys: ← → in the text or the side pane go to the mark before or
+// after, as the side pane's ‹ ›; in the contents, to the mula before or after,
+// as the bar's ‹ ›. The pane is the one the pointer or the focus was in last.
+(function () {
+  let pane = "main";
+  const at = e => { const el = e.target.closest && e.target.closest("#nav, #side, main"); if (el) pane = el.id || "main"; };
+  document.addEventListener("pointermove", at, {passive: true});
+  document.addEventListener("pointerdown", at);
+  document.addEventListener("focusin", at);
+  document.addEventListener("keydown", e => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target.closest("input, select, textarea, [contenteditable]")) return;   // the script's list uses them
+    const d = e.key === "ArrowRight" ? 1 : -1;
+    const b = document.getElementById(pane === "nav" ? (d > 0 ? "mnext" : "mprev") : (d > 0 ? "next" : "prev"));
+    e.preventDefault();
+    if (!b.disabled) b.click();
+  });
 })();
 </script>
 </body>

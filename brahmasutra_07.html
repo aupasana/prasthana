@@ -16,7 +16,10 @@
 @font-face { font-family: "Adishila"; src: url("assets/AdishilaHeavyH.ttf") format("truetype"); font-weight: 900; font-style: normal; }
 @font-face { font-family: "Adishila"; src: url("assets/AdishilaHeavyItalicI.ttf") format("truetype"); font-weight: 900; font-style: italic; }
 @font-face { font-family: "Noto Serif"; src: url("assets/NotoSerif-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/NotoSansDevanagari-Regular.ttf") format("truetype"); }
+/* Noto Sans: the variable font, all its weights (the regular if it is missing) */
+@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/NotoSansDevanagari-VariableFont_wdth,wght.ttf") format("truetype"),
+  url("assets/NotoSansDevanagari-Regular.ttf") format("truetype"); font-weight: 100 900; font-stretch: 62.5% 100%; }
+@font-face { font-family: "Sanskrit 2003"; src: url("assets/Sanskrit2003.ttf") format("truetype"); }
 :root {
   --bump: 0pt;   /* the reader's text size step (lipi.js), for the middle and right panels */
   --deva: "Adishila", "Noto Sans Devanagari", serif;
@@ -37,6 +40,9 @@
   --line: #3a3631; --link: #8bb8e0; --hl: #5a5023; --mark: #3d3722;
   --act: #ff8a50; --actbg: #4a2a1c; --cur: #75621f; --curline: #d9b955;
 }
+/* the reader's font (lipi.js); Adishila unless chosen, and Noto Serif for the Latin scripts */
+:root[data-font="sanskrit2003"] { --deva: "Sanskrit 2003", "Noto Sans Devanagari", serif; }
+:root[data-font="noto"] { --deva: "Noto Sans Devanagari", serif; }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
@@ -55,7 +61,8 @@ body.nav-closed #nav, body.side-closed #side { display: none; }
 #size { display: flex; gap: 0.3rem; margin: 0 0 0.5rem; }
 #size button { font-size: 0.9em; background: var(--bg); padding: 0.1rem 0.6rem; }
 #size .step { align-self: center; font-family: var(--latin); font-size: 0.75em; color: var(--muted); }
-#lipi select { font: inherit; font-size: 0.9em; color: var(--text); background: var(--bg); border: 1px solid var(--line);
+#font { margin: 0 0 0.5rem; }
+#lipi select, #font select { font: inherit; font-size: 0.9em; color: var(--text); background: var(--bg); border: 1px solid var(--line);
   border-radius: 4px; padding: 0.15rem 0.3rem; width: 100%; }
 #lipi .lipi-note { font-family: var(--latin); font-size: 0.75em; color: var(--muted); margin-top: 0.3rem; }
 :root.lipi-latin { --deva: "Noto Serif", "Noto Sans Devanagari", serif; }
@@ -197,7 +204,7 @@ body:not(.side-closed) main a.active { background: var(--actbg); outline: 2px so
 </head>
 <body class="side-closed">
 <aside id="nav">
-<a class="home" href="index.html">प्रस्थानत्रयी</a><nav class="works"><a href="isha.html">ई॰</a> <a href="kena_01.html">के॰</a> <a href="katha_01.html">क॰</a> <a href="prashna_01.html">प्र॰</a> <a href="mundaka_01.html">मु॰</a> <a href="mandukya_01.html">मा॰</a> <a href="taittiriya_01.html">तै॰</a> <a href="aitareya_01.html">ऐ॰</a> <a href="chandogya_01.html">छा॰</a> <a href="brihadaranyaka_01.html">बृ॰</a> <a href="gita_01.html">गी॰</a> <a href="brahmasutra_01.html" class="here">सू॰</a></nav><div id="size"></div><div id="lipi"></div>
+<a class="home" href="index.html">प्रस्थानत्रयी</a><nav class="works"><a href="isha.html">ई॰</a> <a href="kena_01.html">के॰</a> <a href="katha_01.html">क॰</a> <a href="prashna_01.html">प्र॰</a> <a href="mundaka_01.html">मु॰</a> <a href="mandukya_01.html">मा॰</a> <a href="taittiriya_01.html">तै॰</a> <a href="aitareya_01.html">ऐ॰</a> <a href="chandogya_01.html">छा॰</a> <a href="brihadaranyaka_01.html">बृ॰</a> <a href="gita_01.html">गी॰</a> <a href="brahmasutra_01.html" class="here">सू॰</a></nav><div id="size"></div><div id="font"></div><div id="lipi"></div>
 <h1>ब्रह्मसूत्रभाष्यम्</h1>
 <ol class="chapters"><li class="sub">प्रथमोऽध्यायः<div class="ms"><a class="m" href="brahmasutra_01.html" title="प्रथमोऽध्यायः — प्रथमः पादः">१</a> <a class="m" href="brahmasutra_02.html" title="प्रथमोऽध्यायः — द्वितीयः पादः">२</a> <a class="m" href="brahmasutra_03.html" title="प्रथमोऽध्यायः — तृतीयः पादः">३</a> <a class="m" href="brahmasutra_04.html" title="प्रथमोऽध्यायः — चतुर्थः पादः">४</a></div></li><li class="sub">द्वितीयोऽध्यायः<div class="ms"><a class="m" href="brahmasutra_05.html" title="द्वितीयोऽध्यायः — प्रथमः पादः">१</a> <a class="m" href="brahmasutra_06.html" title="द्वितीयोऽध्यायः — द्वितीयः पादः">२</a> <a class="m here" href="brahmasutra_07.html" title="द्वितीयोऽध्यायः — तृतीयः पादः">३</a> <a class="m" href="brahmasutra_08.html" title="द्वितीयोऽध्यायः — चतुर्थः पादः">४</a></div></li><li class="sub">तृतीयोऽध्यायः<div class="ms"><a class="m" href="brahmasutra_09.html" title="तृतीयोऽध्यायः — प्रथमः पादः">१</a> <a class="m" href="brahmasutra_10.html" title="तृतीयोऽध्यायः — द्वितीयः पादः">२</a> <a class="m" href="brahmasutra_11.html" title="तृतीयोऽध्यायः — तृतीयः पादः">३</a> <a class="m" href="brahmasutra_12.html" title="तृतीयोऽध्यायः — चतुर्थः पादः">४</a></div></li><li class="sub">चतुर्थोऽध्यायः<div class="ms"><a class="m" href="brahmasutra_13.html" title="चतुर्थोऽध्यायः — प्रथमः पादः">१</a> <a class="m" href="brahmasutra_14.html" title="चतुर्थोऽध्यायः — द्वितीयः पादः">२</a> <a class="m" href="brahmasutra_15.html" title="चतुर्थोऽध्यायः — तृतीयः पादः">३</a> <a class="m" href="brahmasutra_16.html" title="चतुर्थोऽध्यायः — चतुर्थः पादः">४</a></div></li></ol>
 <ol class="toc"><li><a href="#BS-C02-S03-I01">उपोद्घातः</a></li><li class="sub"><a href="#BS-C02-S03-V01">वियदधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V01">१</a> <a class="m" href="#BS-C02-S03-V02">२</a> <a class="m" href="#BS-C02-S03-V03">३</a> <a class="m" href="#BS-C02-S03-V04">४</a> <a class="m" href="#BS-C02-S03-V05">५</a> <a class="m" href="#BS-C02-S03-V06">६</a> <a class="m" href="#BS-C02-S03-V07">७</a></div></li><li class="sub"><a href="#BS-C02-S03-V08">मातरिश्वाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V08">८</a></div></li><li class="sub"><a href="#BS-C02-S03-V09">असम्भवाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V09">९</a></div></li><li class="sub"><a href="#BS-C02-S03-V10">तेजोऽधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V10">१०</a></div></li><li class="sub"><a href="#BS-C02-S03-V11">अबधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V11">११</a></div></li><li class="sub"><a href="#BS-C02-S03-V12">पृथिव्यधिकाराधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V12">१२</a></div></li><li class="sub"><a href="#BS-C02-S03-V13">तदभिध्यानाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V13">१३</a></div></li><li class="sub"><a href="#BS-C02-S03-V14">विपर्ययाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V14">१४</a></div></li><li class="sub"><a href="#BS-C02-S03-V15">अन्तराविज्ञानाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V15">१५</a></div></li><li class="sub"><a href="#BS-C02-S03-V16">चराचरव्यपाश्रयाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V16">१६</a></div></li><li class="sub"><a href="#BS-C02-S03-V17">आत्माधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V17">१७</a></div></li><li class="sub"><a href="#BS-C02-S03-V18">ज्ञाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V18">१८</a></div></li><li class="sub"><a href="#BS-C02-S03-V19">उत्क्रान्तिगत्यधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V19">१९</a> <a class="m" href="#BS-C02-S03-V20">२०</a> <a class="m" href="#BS-C02-S03-V21">२१</a> <a class="m" href="#BS-C02-S03-V22">२२</a> <a class="m" href="#BS-C02-S03-V23">२३</a> <a class="m" href="#BS-C02-S03-V24">२४</a> <a class="m" href="#BS-C02-S03-V25">२५</a> <a class="m" href="#BS-C02-S03-V26">२६</a> <a class="m" href="#BS-C02-S03-V27">२७</a> <a class="m" href="#BS-C02-S03-V28">२८</a> <a class="m" href="#BS-C02-S03-V29">२९</a> <a class="m" href="#BS-C02-S03-V30">३०</a> <a class="m" href="#BS-C02-S03-V31">३१</a> <a class="m" href="#BS-C02-S03-V32">३२</a></div></li><li class="sub"><a href="#BS-C02-S03-V33">कर्त्रधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V33">३३</a> <a class="m" href="#BS-C02-S03-V34">३४</a> <a class="m" href="#BS-C02-S03-V35">३५</a> <a class="m" href="#BS-C02-S03-V36">३६</a> <a class="m" href="#BS-C02-S03-V37">३७</a> <a class="m" href="#BS-C02-S03-V38">३८</a> <a class="m" href="#BS-C02-S03-V39">३९</a></div></li><li class="sub"><a href="#BS-C02-S03-V40">तक्षाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V40">४०</a></div></li><li class="sub"><a href="#BS-C02-S03-V41">परायत्ताधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V41">४१</a> <a class="m" href="#BS-C02-S03-V42">४२</a></div></li><li class="sub"><a href="#BS-C02-S03-V43">अंशाधिकरणम्</a><div class="ms"><a class="m" href="#BS-C02-S03-V43">४३</a> <a class="m" href="#BS-C02-S03-V44">४४</a> <a class="m" href="#BS-C02-S03-V45">४५</a> <a class="m" href="#BS-C02-S03-V46">४६</a> <a class="m" href="#BS-C02-S03-V47">४७</a> <a class="m" href="#BS-C02-S03-V48">४८</a> <a class="m" href="#BS-C02-S03-V49">४९</a> <a class="m" href="#BS-C02-S03-V50">५०</a> <a class="m" href="#BS-C02-S03-V51">५१</a> <a class="m" href="#BS-C02-S03-V52">५२</a> <a class="m" href="#BS-C02-S03-V53">५३</a></div></li></ol>
@@ -569,6 +576,25 @@ arrows();
   main.addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; update(); }); } });
   window.addEventListener("load", update);
   update();
+})();
+// the arrow keys: ← → in the text or the side pane go to the mark before or
+// after, as the side pane's ‹ ›; in the contents, to the mula before or after,
+// as the bar's ‹ ›. The pane is the one the pointer or the focus was in last.
+(function () {
+  let pane = "main";
+  const at = e => { const el = e.target.closest && e.target.closest("#nav, #side, main"); if (el) pane = el.id || "main"; };
+  document.addEventListener("pointermove", at, {passive: true});
+  document.addEventListener("pointerdown", at);
+  document.addEventListener("focusin", at);
+  document.addEventListener("keydown", e => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target.closest("input, select, textarea, [contenteditable]")) return;   // the script's list uses them
+    const d = e.key === "ArrowRight" ? 1 : -1;
+    const b = document.getElementById(pane === "nav" ? (d > 0 ? "mnext" : "mprev") : (d > 0 ? "next" : "prev"));
+    e.preventDefault();
+    if (!b.disabled) b.click();
+  });
 })();
 </script>
 </body>

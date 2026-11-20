@@ -113,9 +113,35 @@
     box.appendChild(label);
     set(step);
   }
+  // the font, under the text size: Adishila, Sanskrit 2003 or Noto Sans, kept
+  // like the script (the CSS's :root[data-font]); set at once, so the text
+  // doesn't change font after it is drawn
+  const FONTS = [["adishila", "Adishila"], ["sanskrit2003", "Sanskrit 2003"], ["noto", "Noto Sans"]];
+  const setFont = v => {
+    if (!FONTS.some(([k]) => k === v)) v = "adishila";
+    if (v === "adishila") delete document.documentElement.dataset.font;
+    else document.documentElement.dataset.font = v;
+    try { localStorage.setItem("font", v); } catch (e) {}
+    return v;
+  };
+  let font = "adishila";
+  try { font = localStorage.getItem("font") || "adishila"; } catch (e) {}
+  font = setFont(font);
+  function fonter() {
+    const box = document.getElementById("font");
+    if (!box) return;
+    const sel = document.createElement("select");
+    sel.setAttribute("aria-label", "font");
+    sel.title = "font";
+    for (const [v, label] of FONTS) sel.add(new Option(label, v));
+    sel.value = font;
+    sel.onchange = () => { font = setFont(sel.value); };
+    box.appendChild(sel);
+  }
   window.lipi = { apply: root => apply(root) };
   document.addEventListener("DOMContentLoaded", () => {
     sizer();
+    fonter();
     chooser();
     const want = get();
     if (want !== "devanagari") load(ok => ok && choose(want));
