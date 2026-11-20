@@ -89,24 +89,22 @@ main { grid-column: 2; grid-row: 1; overflow-y: auto; padding: 0 2rem 4rem 4.5re
 /* the bar's toggles, one per kind of mark, each bounded like its mark */
 #toggles { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem; }
 #toggles button { font-size: calc(0.7rem + 4pt); background: var(--bg); padding: 0.1rem 0.45rem; border-radius: 3px; }
-#toggles button[data-k="pn"] { color: var(--link); border: 3px double currentColor; }
 #toggles button[data-k="sn"] { color: #a07a1c; border: 1px solid currentColor; }
 #toggles button[data-k="tk"] { color: var(--link); border: 1px solid currentColor; }
 #toggles button[data-k="gp"] { color: #8a4f9e; border: 1px solid currentColor; border-radius: 1em; }
-#toggles button[data-k="mn"] { color: var(--link); border: 1px solid currentColor; border-radius: 2px; }
 #toggles button[data-k="gl"] { color: #3f7f6a; border: 1px dashed currentColor; border-radius: 1em; }
 #toggles button.off { opacity: 0.4; text-decoration: line-through; }
 #toggles button:disabled { opacity: 0.25; cursor: default; }
-body.hide-pn main .pn, body.hide-sn main .sn, body.hide-tk main .tk, body.hide-gp main .gp,
-body.hide-mn main .mn, body.hide-gl main .gl { display: none; }
-/* the show button (an eye): off, the text shows only the paragraph numbers, and
-   the mark the side pane went to, until it moves on; the toggles stay as they are */
+body.hide-sn main .sn, body.hide-tk main .tk, body.hide-gp main .gp, body.hide-gl main .gl { display: none; }
+/* the show button (an eye): off, the text shows only the paragraph numbers and the
+   commentary on the mula (which have no toggle: always shown), and the mark the side
+   pane went to, until it moves on; the toggles stay as they are */
 #toggles #showbtn { color: var(--text); border: 1px solid var(--line); display: inline-flex; align-items: center; }
 #showbtn .shut { display: none; }
 #showbtn.off .open { display: none; }
 #showbtn.off .shut { display: inline; }
 #toggles #showbtn.off { text-decoration: none; }
-body.bare main :is(.sn, .tk, .gp, .mn, .gl):not(.active) { display: none; }
+body.bare main :is(.sn, .tk, .gp, .gl):not(.active) { display: none; }
 button { font: inherit; font-size: calc(0.85rem + 4pt); color: var(--text); background: var(--panel);
   border: 1px solid var(--line); border-radius: 4px; padding: 0.25rem 0.6rem; cursor: pointer; }
 h3.sub { text-align: center; font-weight: 600; font-size: calc(1.25rem + 6pt + var(--bump)); margin: 3rem 0 0; }
@@ -359,18 +357,21 @@ const body = document.body, side = document.getElementById("sidebody");
 const small = () => window.matchMedia("(max-width: 900px)").matches;
 if (small()) body.classList.add("nav-closed");
 document.getElementById("navbtn").onclick = () => body.classList.toggle("nav-closed");
-// the marks in the text, each kind with a toggle in the bar, on every page;
-// a kind the page has none of yet is greyed and can't be clicked; what is
-// hidden is kept like the script and size
+// the marks' names, for the side pane's « » (as the index's columns, shortened)
+const LABELS = {pn: "अनुवादः", sn: "पङ्क्त्यर्थः", tk: "गिरिः", gp: "प्रसादिनी", mn: "टीका", gl: "वृत्ति"};
+// the marks in the text, each kind with a toggle in the bar, on every page, but
+// the paragraph numbers and the commentary on the mula, always shown; a kind the
+// page has none of yet is greyed and can't be clicked; what is hidden is kept
+// like the script and size; first, the show button
 (function () {
-  const KINDS = [["pn", "अनुवादः"], ["sn", "पङ्क्त्यर्थः"], ["tk", "गिरिः"],
-                 ["gp", "प्रसादिनी"], ["mn", "टीका"], ["gl", "वृत्ति"]];
+  const KINDS = ["sn", "tk", "gp", "gl"];
   let hidden = [];
   try { hidden = JSON.parse(localStorage.getItem("hidemarks") || "[]"); } catch (e) {}
   const box = document.getElementById("toggles");
-  for (const [k, label] of KINDS) {
+  box.appendChild(showButton());
+  for (const k of KINDS) {
     const b = document.createElement("button");
-    b.type = "button"; b.dataset.k = k; b.textContent = label; b.title = D.tips[k];   // as the index's
+    b.type = "button"; b.dataset.k = k; b.textContent = LABELS[k]; b.title = D.tips[k];   // as the index's
     if (!document.querySelector("main ." + k)) {   // not on this page (yet)
       b.disabled = true; b.title += " (not on this page yet)";
       box.appendChild(b);
@@ -380,17 +381,16 @@ document.getElementById("navbtn").onclick = () => body.classList.toggle("nav-clo
       body.classList.toggle("hide-" + k, off);
       b.classList.toggle("off", off);
       b.setAttribute("aria-pressed", String(!off));
-      hidden = hidden.filter(x => x !== k).concat(off ? [k] : []);
+      hidden = hidden.filter(x => KINDS.includes(x) && x !== k).concat(off ? [k] : []);
       try { localStorage.setItem("hidemarks", JSON.stringify(hidden)); } catch (e) {}
     };
     b.onclick = () => set(!body.classList.contains("hide-" + k));
     set(hidden.includes(k));
     box.appendChild(b);
-    if (k === "pn") box.appendChild(showButton());
   }
 })();
-// the show button, after अनुवादः: off, only the paragraph numbers are shown in
-// the text (shown is not enabled: the side pane's arrows still go to the rest);
+// the show button, first in the bar: off, only the paragraph numbers (and the
+// commentary on the mula) are shown in the text (shown is not enabled: the side pane's arrows still go to the rest);
 // kept like the toggles
 function showButton() {
   const b = document.createElement("button");
@@ -445,7 +445,7 @@ function target(d, same) {
 const ARROWS = [["prevk", -1, true], ["prev", -1, false], ["next", 1, false], ["nextk", 1, true]];
 function arrows() {
   const cur = document.querySelector("main a.active"), k = cur && kindOf(cur);
-  const label = k && document.querySelector(`#toggles button[data-k="${k}"]`).textContent;
+  const label = k && LABELS[k];
   side.parentElement.querySelector(".sbar").dataset.k = k || "";
   for (const [id, d, same] of ARROWS) {
     const b = document.getElementById(id);
